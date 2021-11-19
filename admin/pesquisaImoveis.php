@@ -33,6 +33,8 @@ $result=mysqli_query($con,$sql);
 <?php
 
 
+$txt="Confirma a eliminação de ";
+
 while ($dados=mysqli_fetch_array($result)) {
 ?>
 <tr>
@@ -43,9 +45,9 @@ while ($dados=mysqli_fetch_array($result)) {
     <td class="text-center"><?php echo $dados['freguesiaNome'];?></td>
     <td class="text-center"><?php echo $dados['imovelTipoNome'];?></td>
     <td class="text-center">
-        <a href="editaTipo.php?id=<?php echo $dados['imovelId']?>" class="btn-sm btn-primary"><i class="bi bi-pencil"></i> Editar</a>
+        <a href="editaImovel.php?id=<?php echo $dados['imovelId']?>" class="btn-sm btn-primary"><i class="bi bi-pencil"></i> Editar</a>
         <a href="form.php?id=<?php echo $dados['imovelId']?>" class="btn-sm btn-success"><i class="bi bi-aspect-ratio"> Foto</i></a>
-        <a href="eliminaImovel.php?id=<?php echo $dados['imovelId']?>" class="btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</a>
+        <a href="#" onclick="getMessage('Elimina','<?php echo $txt?>',<?php echo $dados['imovelId']?>, 'imoveis','imovelNome');" class="btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</a>
     </td>
 </tr>
 <?php
