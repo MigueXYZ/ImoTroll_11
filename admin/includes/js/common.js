@@ -75,5 +75,3 @@ function getMessage(header, txt, id, tabela, campo,  type=1){// por defeito elim
     }
 
 }
-
-
