@@ -42,7 +42,9 @@ function imagens(valor){
 }
 
 
-
+function eliminaImovel(id){
+    alert('Best'+id);
+}
 
 
 function getMessage(header, txt, id, tabela, campo,  type=1){// por defeito elimina
@@ -50,7 +52,7 @@ function getMessage(header, txt, id, tabela, campo,  type=1){// por defeito elim
 
     $.ajax({
         type: "POST",
-        url: "AJAXGetDistritoName.php",
+        url: "AJAXGetName.php",
         data:{
             id: id,
             table: tabela,
@@ -66,9 +68,10 @@ function getMessage(header, txt, id, tabela, campo,  type=1){// por defeito elim
 
 
     if(type==1){// elimina
-        $("#btnPrin").html('<a href="../admin/confirmaEliminaTipo.php?id">Elimina</a>');
+        var el = document.getElementById("btnPrin");
+        el.addEventListener("click", function(){eliminaImovel(id)}, false);
+        $("#btnPrin").html('Elimina');
         $("#btnPrin").toggleClass('btn-primary btn-danger');
-
     }
 
 }
