@@ -1,9 +1,10 @@
-preenche(){
+function preenche(ordena){
+
         $.ajax({
             type: "POST",
-            url: "imagem.php",
+            url: "listar.php",
             data:{
-                "n":valor
+                "ordem":ordena
             }
         }).done(function(result) {
             //alert(result);
