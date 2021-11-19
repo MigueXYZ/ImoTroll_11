@@ -1,0 +1,14 @@
+<?php
+    define("HOST","localhost");
+    define("USER","root");
+    define("PWD","");
+    define("DATABASE","2021imobiliaria");
+    define("HOME",1);
+    define("TIPOS",2);
+    define("DISTRITOS",3);
+    define("CONCELHOS",4);
+    define("FREGUESIAS",5);
+    define("IMOVEIS",6);
+    define("IMOVEISEDITA",61);
+    define("UPLOAD","../upload")
+?>
