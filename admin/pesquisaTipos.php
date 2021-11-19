@@ -32,7 +32,7 @@ while ($dados=mysqli_fetch_array($result)) {
     <td class="text-center"><?php echo $dados['imovelTipoGenero'];?></td>
     <td class="text-center">
         <a href="editaTipo.php?id=<?php echo $dados['imovelTipoId']?>" class="btn-sm btn-primary"><i class="bi bi-pencil"></i> Editar</a>
-        <a href="#" onclick="getMessage('Elimina','<?php echo $txt?>');"<?php //echo $dados['imovelTipoId']?> class="btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</a>
+        <a href="#" onclick="getMessage('Elimina','<?php echo $txt?>',<?php echo $dados['imovelTipoId']?>, 'imoveltipos','imovelTipoNome');" class="btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</a>
        <!-- <a href="eliminaTipo.php?id=<?php //echo $dados['imovelTipoId']?>" class="btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</a> -->
     </td>
 </tr>

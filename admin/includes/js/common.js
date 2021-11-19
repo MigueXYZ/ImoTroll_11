@@ -41,11 +41,11 @@ function imagens(valor){
     });
 }
 
-function  getamm(){
 
-}
 
-function getMessage(header, txt, type=1 ){// por defeito elimina
+
+
+function getMessage(header, txt, id, tabela, campo,  type=1){// por defeito elimina
 
 
     $.ajax({
@@ -57,7 +57,7 @@ function getMessage(header, txt, type=1 ){// por defeito elimina
             field: campo
         }
     }).done(function(result) {
-        alert(result);
+        //alert(result);
         txt+=result;
         $('#mensagem').modal('toggle');
         $('#mensagemTitulo').html(header);
@@ -66,7 +66,7 @@ function getMessage(header, txt, type=1 ){// por defeito elimina
 
 
     if(type==1){// elimina
-        $("#btnPrin").html('Elimina');
+        $("#btnPrin").html('<a href="../admin/confirmaEliminaTipo.php?id">Elimina</a>');
         $("#btnPrin").toggleClass('btn-primary btn-danger');
 
     }
