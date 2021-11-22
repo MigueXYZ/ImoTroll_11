@@ -28,6 +28,19 @@ function mostra(pagina,valor=''){
 }
 
 
+function tipoGenero(genero){
+    $.ajax({
+        type: "POST",
+        url: "teste.php",
+        data:{
+            "n":genero
+        }
+    }).done(function(result) {
+        //alert(result);
+        $( '#destinoTipo' ).html( result );
+    });
+}
+
 function imagens(valor){
     $.ajax({
         type: "POST",
@@ -42,8 +55,29 @@ function imagens(valor){
 }
 
 
-function eliminaImovel(id){
-    alert('Best'+id);
+function elimina(id, tabela, campo){
+    let url;
+
+    switch(tabela){
+        case "imoveis": url = "listaImoveis.php"; break;
+        case "imoveltipos": url = "listaTipos.php"; break;
+        case "distritos": url = "listaDistritos.php"; break;
+        case "concelhos": url = "listaConcelhos.php"; break;
+        case "freguesias": url = "listaFreguesias.php"; break;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "confirmaElimina.php",
+        data:{
+            "id": id,
+            "table": tabela,
+            "field": campo
+        }
+    }).done(function(result) {
+        //alert(result);
+        window.location.href = url;
+    });
 }
 
 
@@ -69,7 +103,7 @@ function getMessage(header, txt, id, tabela, campo,  type=1){// por defeito elim
 
     if(type==1){// elimina
         var el = document.getElementById("btnPrin");
-        el.addEventListener("click", function(){eliminaImovel(id)}, false);
+        el.addEventListener("click", function(){elimina(id,tabela,campo)}, false);
         $("#btnPrin").html('Elimina');
         $("#btnPrin").toggleClass('btn-primary btn-danger');
     }

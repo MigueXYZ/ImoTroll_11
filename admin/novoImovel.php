@@ -43,8 +43,9 @@ $enum = explode("','", $matches[1]);
         <div class="mb-3">
             <?php
                foreach ($enum as $dados2){
+
                    ?>
-            <input onclick="mostra(this.value);" class="form-check-input" type="radio" name="generoImovel" id="<?php echo $dados2;?>" value="<?php echo $dados2;?>">
+            <input onclick="tipoGenero(this.value);" class="form-check-input" type="radio" name="generoImovel" id="<?php echo $dados2;?>" value="<?php echo $dados2;?>">
                    <label  class="form-check-label me-3" for="<?php echo $dados2;?>"><?php echo $dados2;?></label>
                    <?php
                 }
@@ -52,7 +53,7 @@ $enum = explode("','", $matches[1]);
 
         </div>
         <div class="mb-3">
-            <div id="destino">
+            <div id="destinoTipo">
 
             </div>
         </div>
