@@ -1,5 +1,4 @@
-function preenche(ordena){
-
+function preenche(ordena=-1){
         $.ajax({
             type: "POST",
             url: "listar.php",
@@ -8,7 +7,7 @@ function preenche(ordena){
             }
         }).done(function(result) {
             //alert(result);
-            $( '#imagens' ).html( result );
+            $( '#preenche' ).html( result );
 
         });
 }

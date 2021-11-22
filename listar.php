@@ -1,12 +1,30 @@
 <?php
+include_once("admin/includes/body.inc.php");
+$ordem=$_POST['ordem'];
+switch ($ordem){
+    case -1:$ordem=""; break;
+    case 1:$ordem="order by imovelPreco ASC";break;
+    case 2:$ordem="order by imovelPreco DESC";break;
+    case 3:$ordem="order by imovelId DESC";break;
+};
+$sql="select * from Imoveis ".$ordem;
+$result=mysqli_query($con,$sql);
 
-?>
+
+while($dados=mysqli_fetch_array($result)){
+    $sqlIMG="select * from imagens where imagemImovelId= ".$dados['imovelId']." and imagemTipo='principal'";
+    $resultIMG=mysqli_query($con,$sqlIMG);
+    $img=mysqli_fetch_array($resultIMG);
+    ?>
 <div class="col-md-4 mb-5">
     <div class="card h-100">
+        <img class="card-img-top" src="<?php echo $img['imagemCaminhoURL'] ?>">
         <div class="card-body">
-            <h2 class="card-title">Card One</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+            <h2 class="card-title"><?php echo $dados['imovelNome']?></h2>
         </div>
         <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
     </div>
 </div>
+<?php
+    }
+    ?>
