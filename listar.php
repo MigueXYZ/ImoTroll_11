@@ -10,17 +10,13 @@ switch ($ordem){
 $sql="select * from Imoveis ".$ordem;
 $result=mysqli_query($con,$sql);
 ?>
-    <div class="row gx-4 gx-lg-5 mb-3">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Ordena
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">Mais Barato</button>
-                <button class="dropdown-item" type="button">Mais Caro</button>
-                <button class="dropdown-item" type="button">Mais Recente</button>
-            </div>
-        </div>
+    <div>
+        <label for="Ordem">Ordenação</label>
+        <select onchange="preenche(this.value);" name="Ordem" id="Ordem">
+            <option value="1">Mais Barato</option>
+            <option value="2">Mais Caro</option>
+            <option value="3">Mais Recente</option>
+        </select>
     </div>
 <?php
 

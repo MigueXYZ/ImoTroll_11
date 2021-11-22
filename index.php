@@ -22,6 +22,7 @@
                 preenche();
             })
         </script>
+        <link rel="stylesheet" href="includes/css/estilos.css">
     </head>
     <body>
         <!-- Responsive navbar-->
