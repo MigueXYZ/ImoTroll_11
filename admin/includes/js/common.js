@@ -54,16 +54,16 @@ function imagens(valor){
     });
 }
 
-function atualizaTipo(valor){
+function atualizaTipo(valor,idImovel){
     $.ajax({
         type: "POST",
-        url: "imagem.php",
+        url: "atualizaEstado.php",
         data:{
             "n":valor
         }
     }).done(function(result) {
         //alert(result);
-        $( '#imagens' ).html( result );
+        imagens(idImovel);
     });
 }
 

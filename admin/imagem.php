@@ -9,7 +9,14 @@ $n=$_POST['n'];
     $result=mysqli_query($con,$sql);
     while($dados=mysqli_fetch_array($result)){
         ?>
-        <p><img src="<?php echo "../". $dados['imagemCaminhoURL']?>" class="rounded img-fluid" width="350px" height="350px"> <input type="radio" onclick="atualizaTipo(this.value)" value="<?php echo $dados['imagemTipo']?>"> Principal</input></p>
+            <div class="mb-3">
+                <p>
+                    <img src="<?php echo "../". $dados['imagemCaminhoURL']?>" class="rounded img-fluid position-static" width="350px" height="350px">
+                    <input type="radio" class="align-baseline" id="prince" onclick="atualizaTipo(this.value,<?php echo $dados['imagemImovelId']?>)" value="<?php echo $dados['imagemId']?>" <?php echo ($dados['imagemTipo']=='principal'?"checked":"")?>> Principal</input>
+                    <a class="btn btn-sm btn-success" onchange="atualizaTipo(this.value,<?php echo $dados['imagemImovelId']?>)" value="<?php echo $dados['imagemId']?>" <?php echo ($dados['imagemTipo']=='principal'?"checked":"")?>><i class="bi bi-star<?php echo ($dados['imagemTipo']=='principal'?"-fill":"")?>"></i></a>
+                    <button ></button>
+                </p>
+            </div>
 
 
         <?php
