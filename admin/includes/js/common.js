@@ -54,6 +54,18 @@ function imagens(valor){
     });
 }
 
+function atualizaTipo(valor){
+    $.ajax({
+        type: "POST",
+        url: "imagem.php",
+        data:{
+            "n":valor
+        }
+    }).done(function(result) {
+        //alert(result);
+        $( '#imagens' ).html( result );
+    });
+}
 
 function elimina(id, tabela, campo){
     let url;

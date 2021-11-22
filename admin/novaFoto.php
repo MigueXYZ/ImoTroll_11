@@ -14,7 +14,7 @@ switch ($_FILES['imagem']['type']){
 
 copy($_FILES['imagem']['tmp_name'],"../uploads/".$name);
 
-$sql="insert into imagens(imagemCaminhoURL,imagemImovelId) values('../uploads/".$name."',".$_POST['idImovel'].")";
+$sql="insert into imagens(imagemCaminhoURL,imagemImovelId) values('uploads/".$name."',".$_POST['idImovel'].")";
 mysqli_query($con,$sql);
 header("location:form.php?id=".$_POST['idImovel']);
 ?>
