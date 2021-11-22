@@ -28,6 +28,19 @@ function mostra(pagina,valor=''){
 }
 
 
+function tipoGenero(genero){
+    $.ajax({
+        type: "POST",
+        url: "teste.php",
+        data:{
+            "n":genero
+        }
+    }).done(function(result) {
+        //alert(result);
+        $( '#destinoTipo' ).html( result );
+    });
+}
+
 function imagens(valor){
     $.ajax({
         type: "POST",
@@ -62,7 +75,7 @@ function elimina(id, tabela, campo){
             "field": campo
         }
     }).done(function(result) {
-        alert(result);
+        //alert(result);
         window.location.href = url;
     });
 }
