@@ -1,10 +1,11 @@
-function preenche(ordena=-1,tipo='-1'){
+function preenche(ordena=-1,tipo='-1',freguesia=-1){
         $.ajax({
             type: "POST",
             url: "listar.php",
             data:{
                 "ordem":ordena,
-                "tipo":tipo
+                "tipo":tipo,
+                "local":freguesia
             }
         }).done(function(result) {
             //alert(result);
@@ -23,9 +24,10 @@ function preencheDistritos(){
 }
 
 function preencheConcelhos(id){
+
     $.ajax({
         type:"POST",
-        url:"AJAXgetConselhos.php",
+        url:"AJAXgetConcelhos.php",
         data:{
             "idDistrito":id
         }
@@ -34,12 +36,12 @@ function preencheConcelhos(id){
     });
 }
 
-function preencheFreguesia(id){
+function preencheFreguesias(id){
     $.ajax({
         type:"POST",
         url:"AJAXgetFreguesias.php",
         data:{
-            "idFreguesia":id
+            "idConcelho":id
         }
     }).done(function(result) {
         $( '#freguesias' ).html( result );

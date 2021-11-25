@@ -2,6 +2,17 @@
 include_once("includes/body.inc.php");
 $ordem=$_POST['ordem'];
 $tipo=$_POST['tipo'];
+$localidade=$_POST['local'];
+
+if($tipo!='-1' and $localidade!='-1'){
+    $aux=" and ";
+}elseif($tipo=='-1' and $localidade!='-1'){
+    $aux=" where ";
+}else{
+    $aux=" ";
+}
+
+
 switch ($ordem){
     case -1:$ordem=""; break;
     case 1:$ordem=" order by imovelPreco ASC";break;
@@ -16,7 +27,13 @@ switch($tipo){
     case 'terreno':$tipo=" where imovelTipoGenero='terreno'";break;
 };
 
-$sql="select * from imoveis inner join imoveltipos on imovelImovelTipoId=imovelTipoId".$tipo.$ordem;
+switch($localidade){
+    case '-1':$local=" ";break;
+    default:
+        $local=" imovelFreguesiaId=".$localidade;break;
+};
+
+$sql="select * from imoveis inner join imoveltipos on imovelImovelTipoId=imovelTipoId".$tipo.$aux.$local.$ordem;
 $result=mysqli_query($con,$sql);
 
 while($dados=mysqli_fetch_array($result)){
