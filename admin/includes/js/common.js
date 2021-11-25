@@ -52,7 +52,7 @@ function imagens(valor){
 function atualizaTipo(valor,idImovel){
     $.ajax({
         type: "POST",
-        url: "atualizaEstado.php",
+        url: "atualizaEstadoTipo.php",
         data:{
             "n":valor,
             "id":idImovel
@@ -60,6 +60,19 @@ function atualizaTipo(valor,idImovel){
     }).done(function(result) {
         //alert(result);
         imagens(idImovel);
+    });
+}
+
+function atualizaImovel(valor){
+    $.ajax({
+        type: "POST",
+        url: "atualizaEstadoImovel.php",
+        data:{
+            "n":valor,
+        }
+    }).done(function(result) {
+        //alert(result);
+        window.location.href = "listaImoveis.php";
     });
 }
 
