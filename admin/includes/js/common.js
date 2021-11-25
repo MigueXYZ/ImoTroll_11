@@ -10,11 +10,6 @@ function mostra(pagina,valor=''){
         case 6: url = "pesquisaImoveis.php"; break;
     }
 
-
-
-
-
-
     $.ajax({
         type: "POST",
         url: url,
