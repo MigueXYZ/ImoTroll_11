@@ -8,7 +8,7 @@ $result=mysqli_query($con,$sql);
     <h1>Lista de Imoveis</h1>
     <table class="table table-striped table-hover text-center">
         <tr>
-            <td colspan="7" align="right">
+            <td colspan="8" align="right">
                 <input type="input" onkeyup="mostra(<?php echo IMOVEIS?>,this.value)" class="btn-sm">
                 <a href="novoImovel.php" class="btn-sm btn-success"><i class="bi bi-plus-circle"></i> Novo Imovel</a>
             </td>
