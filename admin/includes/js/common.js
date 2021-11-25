@@ -31,7 +31,7 @@ function mostra(pagina,valor=''){
 function tipoGenero(genero){
     $.ajax({
         type: "POST",
-        url: "teste.php",
+        url: "tipoGenero.php",
         data:{
             "n":genero
         }
