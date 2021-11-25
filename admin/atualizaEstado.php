@@ -1,14 +1,16 @@
 <?php
+$idImovel=intval($_POST['id']);
+$idImagem=intval($_POST['n']);
 include_once("includes/config.inc.php");
 $con = mysqli_connect(HOST, USER, PWD, DATABASE);
 
-$id=$_POST['id'];
 
-$sql = "update imagens set imagemTipo = 'detalhe' where imagemTipo='principal' and imagemImovelId=".$id;
+
+$sql = "update imagens set imagemTipo = 'detalhe' where  imagemImovelId=".$idImovel;
 mysqli_query($con,$sql);
 
-$n=$_POST['n'];
 
-$sqlGen="update imagens set imagemtipo = 'principal' where imagemId=".$n;
+
+$sqlGen="update imagens set imagemtipo = 'principal' where imagemId=".$idImagem;
 mysqli_query($con,$sqlGen);
 ?>
