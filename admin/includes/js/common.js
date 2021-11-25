@@ -59,7 +59,8 @@ function atualizaTipo(valor,idImovel){
         type: "POST",
         url: "atualizaEstado.php",
         data:{
-            "n":valor
+            "n":valor,
+            "id":idImovel
         }
     }).done(function(result) {
         //alert(result);

@@ -2,7 +2,9 @@
 include_once("includes/config.inc.php");
 $con = mysqli_connect(HOST, USER, PWD, DATABASE);
 
-$sql = "update imagens set imagemTipo = 'detalhe' where imagemTipo='principal'";
+$id=$_POST['id'];
+
+$sql = "update imagens set imagemTipo = 'detalhe' where imagemTipo='principal' and imagemImovelId=".$id;
 mysqli_query($con,$sql);
 
 $n=$_POST['n'];
