@@ -30,6 +30,18 @@ function preencheConcelhos(id){
             "idDistrito":id
         }
     }).done(function(result) {
-        $( '#distritos' ).html( result );
+        $( '#concelhos' ).html( result );
+    });
+}
+
+function preencheFreguesia(id){
+    $.ajax({
+        type:"POST",
+        url:"AJAXgetFreguesias.php",
+        data:{
+            "idFreguesia":id
+        }
+    }).done(function(result) {
+        $( '#freguesias' ).html( result );
     });
 }

@@ -46,7 +46,7 @@
                 <div id="concelhos">
 
                 </div>
-                <div id="freguesia">
+                <div id="freguesias">
 
                 </div>
             </div>
