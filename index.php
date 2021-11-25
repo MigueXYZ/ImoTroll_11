@@ -50,7 +50,16 @@
                     <p> A pequena empresa com a caverna ideal para si!</p>
                 </div>
             </div>
-
+            <div class="row gx-4 gx-lg-5 mt-3">
+                <div>
+                    <label for="Ordem">Ordenação</label>
+                    <select onchange="preenche(this.value);" name="Ordem" id="Ordem">
+                        <option value="3">Mais Recente</option>
+                        <option value="1">Mais Barato</option>
+                        <option value="2">Mais Caro</option>
+                    </select>
+                </div>
+            </div>
             <!-- Content Row-->
             <div class="row gx-4 gx-lg-5 mt-3" id="preenche">
 

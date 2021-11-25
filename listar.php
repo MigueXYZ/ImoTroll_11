@@ -10,14 +10,7 @@ switch ($ordem){
 $sql="select * from Imoveis ".$ordem;
 $result=mysqli_query($con,$sql);
 ?>
-    <div>
-        <label for="Ordem">Ordenação</label>
-        <select onchange="preenche(this.value);" name="Ordem" id="Ordem">
-            <option value="1">Mais Barato</option>
-            <option value="2">Mais Caro</option>
-            <option value="3">Mais Recente</option>
-        </select>
-    </div>
+
 <?php
 
 
