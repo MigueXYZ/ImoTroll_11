@@ -8,6 +8,9 @@ $sql = "select * from imoveis inner join freguesias on imoveis.imovelFreguesiaId
 $result=mysqli_query($con,$sql);
 ?>
 <tr>
+    <th class="text-center">
+        Destaque
+    </th>
     <th  class="text-center">
         Id
     </th>
@@ -38,6 +41,11 @@ $txt="Confirma a eliminação de ";
 while ($dados=mysqli_fetch_array($result)) {
 ?>
 <tr>
+    <td class="text-center">
+        <a class="btn btn-sm btn-success" value="<?php echo $dados['imovelId']?>" onclick="atualizaImovel(<?php echo $dados['imovelId']?>)">
+            <i class="bi bi-star<?php echo ($dados['imovelDestaque']=='destaque'?"-fill":"")?>"></i>
+        </a>
+    </td>
     <td class="text-center"><?php echo $dados['imovelId']?></td>
     <td class="text-center"><?php echo $dados['imovelNome']?></td>
     <td class="text-center"><?php echo $dados['imovelMorada'];?></td>
