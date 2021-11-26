@@ -14,17 +14,17 @@
                 </div>
             </div>
             <div class="row gx-4 gx-lg-5 mt-3">
+                <label for="ordem">Ordenação</label>
                 <div>
-                    <label for="ordem">Ordenação</label>
-                    <select onchange="preenche(this.value,$('#tipo').val(),$('#selFreguesia').val());" name="ordem" id="ordem">
+                    <select  class="form-select " onchange="preenche(this.value,$('#tipo').val(),$('#selFreguesia').val());" name="ordem" id="ordem">
                         <option value="3">Mais Recente</option>
                         <option value="1">Mais Barato</option>
                         <option value="2">Mais Caro</option>
                     </select>
                 </div>
+                <label for="tipo">Tipo</label>
                 <div>
-                    <label for="tipo">Tipo</label>
-                    <select onchange="preenche($('#ordem').val(),this.value,$('#selFreguesia').val())" id="tipo" name="tipo">
+                    <select class="form-select " onchange="preenche($('#ordem').val(),this.value,$('#selFreguesia').val())" id="tipo" name="tipo">
                         <option value="-1">Todos</option>
                         <?php
                         $sql2= "SHOW COLUMNS FROM imoveltipos WHERE Field = 'imovelTipoGenero'";
@@ -46,6 +46,7 @@
                 <div id="concelhos">
 
                 </div>
+
                 <div id="freguesias">
 
                 </div>
