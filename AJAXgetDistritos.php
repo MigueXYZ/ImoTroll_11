@@ -1,4 +1,6 @@
 
+<label for="selDistritos">Distrito</label>
+<div>
 <select class="form-select " onchange="preencheConcelhos(this.value);if(this.value==='-1'){preencheFreguesias(-1);preenche($('#ordem').val(),$('#tipo').val(),-1);}" id="selDistrito" name="selDistrito">
     <option value="-1">Todos</option>
     <?php
@@ -12,3 +14,4 @@
         }
     ?>
 </select>
+</div>

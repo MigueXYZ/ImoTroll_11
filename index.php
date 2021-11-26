@@ -40,15 +40,13 @@
                         ?>
                     </select>
                 </div>
-                <label for="selDistritos">Distrito</label>
                 <div id="distritos">
 
                 </div>
-                <label for="selConcelhos">Concelhos</label>
                 <div id="concelhos">
 
                 </div>
-                <label for="selFreguesias">Freguesias</label>
+
                 <div id="freguesias">
 
                 </div>

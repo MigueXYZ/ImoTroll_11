@@ -1,5 +1,7 @@
 <?php if($_POST['idConcelho']!='-1') {
 ?>
+    <label for="selFreguesias">Freguesias</label>
+        <div>
 <select class="form-select " onchange="preenche($('#ordem').val(),$('#tipo').val(),this.value);" id="selFreguesia" name="selFreguesia">
     <option value="-1">Todos</option>
     <?php
@@ -13,6 +15,7 @@
         }
     ?>
 </select>
+        </div>
     <?php
 }else echo "";
 ?>
