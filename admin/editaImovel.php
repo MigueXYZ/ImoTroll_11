@@ -19,6 +19,9 @@ $dados=mysqli_fetch_array($result);
             <input type="text" name="precoImovel" class="form-control" id="distrito" value="<?php echo $dados['imovelPreco'];?>">
 
             <input type="hidden" name="idImovel" value ="<?php echo $_GET['id']?>">
+
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea name="descricaoImovel"  class="form-control" id="myTextarea"><?php echo $dados['imovelDescricao'];?></textarea>
         </div>
         <div class="mb-3">
             <label for="freguesia" class="form-label">Freguesia</label>

@@ -25,11 +25,6 @@ function drawTop($menu=HOME,$id=-1){
         <title>Imo-TROLLs</title>
         <script src='js/tinymce/tinymce.min.js'></script>
         <script>
-
-
-
-
-
             tinymce.init({
                 selector: 'textarea#myTextarea',
                 plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
@@ -85,7 +80,6 @@ function drawTop($menu=HOME,$id=-1){
                 toolbar_mode: 'sliding',
                 contextmenu: "link image imagetools table",
             });
-
 
 
 

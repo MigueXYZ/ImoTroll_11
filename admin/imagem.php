@@ -17,6 +17,7 @@ $idImovel=intval($_POST['n']);
                     <!-- <input type="radio" class="align-baseline" id="prince" onclick="atualizaTipo(this.value, <?php // echo $dados['imagemImovelId']?>)" value="<? //php echo $dados['imagemId']?>" <?php // echo ($dados['imagemTipo']=='principal'?"checked":"")?>> Principal</input>-->
                     <div class="toprightcorner">
                         <a class="btn btn-sm btn-success" value="<?php echo $dados['imagemId']?>" onclick="atualizaTipo(<?php echo $dados['imagemId']?>,<?php echo $dados['imagemImovelId']?>)"  <?php echo ($dados['imagemTipo']=='principal'?"checked":"")?>><i class="bi bi-star<?php echo ($dados['imagemTipo']=='principal'?"-fill":"")?>"></i></a>
+                        <a class="btn btn-sm btn-danger" value="<?php echo $dados['imagemId']?>" onclick="eliminaImagem(<?php echo $dados['imagemId']?>,<?php echo $dados['imagemImovelId']?>)"><i class="bi bi-trash"></i></a>
                     </div>
                 </div>
 

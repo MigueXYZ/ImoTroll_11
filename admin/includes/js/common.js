@@ -23,6 +23,7 @@ function mostra(pagina,valor=''){
 }
 
 
+
 function tipoGenero(genero){
     $.ajax({
         type: "POST",
@@ -62,6 +63,20 @@ function atualizaTipo(valor,idImovel){
         imagens(idImovel);
     });
 }
+function eliminaImagem(valor,idImovel){
+    $.ajax({
+        type: "POST",
+        url: "eliminaImagem.php",
+        data:{
+            "n":valor,
+            "id":idImovel
+        }
+    }).done(function(result) {
+        alert(result);
+        imagens(idImovel);
+    });
+}
+
 
 function atualizaImovel(valor){
     $.ajax({
