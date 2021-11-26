@@ -43,7 +43,33 @@
                 <input class="form-control bg-light" type="text" readonly value="<?php echo $tipo?>">
             </div>
         </div>
+        <div class="row mt-3 mb-3">
+            <div class="form-floating">
+                <span class="input-group-text f-bold">Descrição:</span>
+                <textarea class="form-control bg-light" readonly style="height: 100px">
+                    <?php echo $dados['imovelDescricao']?>
+                </textarea>
+            </div>
+        </div>
+        <div class="portfolio-item row">
+        <?php
+            $sqlIMG="select * from imagens where imagemImovelId=".$id;
+            $resIMG=mysqli_query($con,$sqlIMG);
+            while($imagem=mysqli_fetch_array($resIMG)){
+        ?>
+
+            <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+                <a href="<?php echo $imagem['imagemCaminhoURL'] ?>" class="fancylight popup-btn" data-fancybox-group="light">
+                    <img class="img-fluid" style="height:300px; width:300px;" src="<?php echo $imagem['imagemCaminhoURL'] ?>" alt="">
+                </a>
+            </div>
+            <?php
+            }
+            ?>
+        </div>
+
     </div>
+
 
 
 

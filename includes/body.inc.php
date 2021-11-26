@@ -24,6 +24,14 @@ function drawTop($menu=HOME,$id=-1){
         <script src="js/scripts.js"></script>
         <script src="includes/js/common.js"></script>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
+        <script type="text/javascript" src="includes/js/gallery.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="includes/css/gallery.css">
+
         <script>
             $('document').ready(function(){
                 preenche();
@@ -56,8 +64,10 @@ function drawBottom(){
     ?>
     <!-- Footer-->
     <footer class="mt-3 py-5 bg-dark">
-        <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy;Imo-Trolls 2021</p></div>
     </footer>
+
+
     </body>
     </html>
         <?php

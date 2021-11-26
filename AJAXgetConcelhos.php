@@ -1,7 +1,6 @@
 <?php if($_POST['idDistrito']!='-1') {
 ?>
-<label for="selConcelhos">Concelho</label>
-<select  onchange="preencheFreguesias(this.value);" id="selConcelho" name="selConcelho">
+<select class="form-select " onchange="preencheFreguesias(this.value);" id="selConcelho" name="selConcelho">
     <option value="-1">Todos</option>
     <?php
         include_once("includes/body.inc.php");
