@@ -15,9 +15,9 @@ if($tipo!='-1' and $localidade!='-1'){
 
 switch ($ordem){
     case -1:$ordem=""; break;
-    case 1:$ordem=" order by imovelPreco ASC";break;
-    case 2:$ordem=" order by imovelPreco DESC";break;
-    case 3:$ordem=" order by imovelId DESC";break;
+    case 1:$ordem="  ,imovelPreco ASC";break;
+    case 2:$ordem="  ,imovelPreco DESC";break;
+    case 3:$ordem="  ,imovelId DESC";break;
 };
 
 switch($tipo){
@@ -33,7 +33,7 @@ switch($localidade){
         $local=" imovelFreguesiaId=".$localidade;break;
 };
 
-$sql="select * from imoveis inner join imoveltipos on imovelImovelTipoId=imovelTipoId".$tipo.$aux.$local.$ordem;
+$sql="select * from imoveis inner join imoveltipos on imovelImovelTipoId=imovelTipoId".$tipo.$aux.$local." order by imovelDestaque ASC".$ordem;
 $result=mysqli_query($con,$sql);
 
 while($dados=mysqli_fetch_array($result)){
