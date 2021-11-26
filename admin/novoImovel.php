@@ -25,6 +25,9 @@ $enum = explode("','", $matches[1]);
             <input type="text" name="precoImovel" class="form-control" id="distrito">
 
             <input type="hidden" name="idImovel">
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea name="descricaoImovel" class="form-control" id="myTextarea">
+            </textarea>
         </div>
         <div class="mb-3">
             <label for="distrito" class="form-label">Freguesia</label>

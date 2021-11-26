@@ -52,7 +52,7 @@ while($dados=mysqli_fetch_array($result)){
             <h2 class="card-title"><?php echo $dados['imovelNome']?></h2>
         </div>
         <div class="card-footer  my-auto">
-            <a class="btn btn-primary btn-sm" href="#!">More Info</a><span class="mt-2" style="float:right;">Preço: <?php echo $dados['imovelPreco']?> €</span>
+            <a class="btn btn-primary btn-sm" href="detalhes.php?id=<?php echo $dados['imovelId']?>" >Detalhes</a><span class="mt-2" style="float:right;">Preço: <?php echo $dados['imovelPreco']?>€</span>
         </div>
     </div>
 </div>
